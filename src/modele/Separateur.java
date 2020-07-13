@@ -7,7 +7,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.io.Writer;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 
 
 public class Separateur {
@@ -64,11 +67,11 @@ public class Separateur {
 			}
 		}
 	}
-//	public void exporter(String garder,String trash, boolean saveTrash) {
+//	public void exportGood(String garder) {
 //		try{
-//			OutputStream writer1 = new FileOutputStream(garder);
-//			FileWriter writer2 = new FileWriter(trash);
-//			
+//			String test = "ABCD";
+//			File outPath = new File(garder);
+//			outPath.write(test);
 //		}
 //		catch (Exception e) {
 //			System.out.println(e.toString());

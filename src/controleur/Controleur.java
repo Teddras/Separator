@@ -20,6 +20,7 @@ public class Controleur {
 	
 	public void lancerAnalyse() {
 		System.out.println("Bouton Appuyé");
+		System.out.println(this.fenetre.getSource());
 	}
 	
 	

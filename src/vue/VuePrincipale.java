@@ -9,6 +9,8 @@ import javax.swing.JTextField;
 
 import controleur.Controleur;
 import controleur.Controleur;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -25,6 +27,38 @@ public class VuePrincipale {
 	private JTextField fichierReste;
 	private JTextField ligneStart;
 	private JTextField ligneStop;
+	private JRadioButton radioGarder;
+	private JRadioButton radioExclure;
+	private JCheckBox saveReste;
+	private ButtonGroup boutonGroup = new ButtonGroup() ;
+	
+	public String getSource() {
+		return fichierSource.getText();
+	}
+	public String getCritere() {
+		return critere.getText();
+	}
+	public String getSortie() {
+		return fichierSortie.getText();
+	}
+	public String getReste() {
+		return fichierReste.getText();
+	}
+	public String getStart() {
+		return ligneStart.getText();
+	}
+	public String getStop() {
+		return ligneStop.getText();
+	}
+	public boolean getGarder() {
+		return radioGarder.isSelected();
+	}
+	public boolean getExclure() {
+		return radioExclure.isSelected();
+	}
+	public boolean getSaveReste() {
+		return saveReste.isSelected();
+	}
 
 	/**
 	 * Launch the application.
@@ -84,22 +118,25 @@ public class VuePrincipale {
 		lblNewLabel_2.setBounds(10, 67, 46, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("garder");
-		rdbtnNewRadioButton.setBounds(61, 63, 67, 23);
-		frame.getContentPane().add(rdbtnNewRadioButton);
+		radioGarder = new JRadioButton("garder");
+		radioGarder.setBounds(61, 63, 67, 23);
+		frame.getContentPane().add(radioGarder);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("exclure");
-		rdbtnNewRadioButton_1.setBounds(130, 63, 109, 23);
-		frame.getContentPane().add(rdbtnNewRadioButton_1);
+		radioExclure = new JRadioButton("exclure");
+		radioExclure.setBounds(130, 63, 109, 23);
+		frame.getContentPane().add(radioExclure);
+		
+		boutonGroup.add(radioExclure);
+		boutonGroup.add(radioGarder);
 		
 		critere = new JTextField();
 		critere.setBounds(10, 92, 206, 20);
 		frame.getContentPane().add(critere);
 		critere.setColumns(10);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("sauver le reste");
-		chckbxNewCheckBox.setBounds(240, 63, 97, 23);
-		frame.getContentPane().add(chckbxNewCheckBox);
+		saveReste = new JCheckBox("sauver le reste");
+		saveReste.setBounds(240, 63, 97, 23);
+		frame.getContentPane().add(saveReste);
 		
 		fichierReste = new JTextField();
 		fichierReste.setBounds(240, 92, 189, 20);
@@ -127,14 +164,10 @@ public class VuePrincipale {
 		JButton btnNewButton = new JButton("Lancer");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				controleur.lancerAnalyse();
 			}
 		});
 		btnNewButton.setBounds(10, 179, 89, 70);
 		frame.getContentPane().add(btnNewButton);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(109, 179, 320, 70);
-		frame.getContentPane().add(panel);
 	}
 }
