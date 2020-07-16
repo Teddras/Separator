@@ -19,7 +19,20 @@ public class Controleur {
 	}
 	
 	public void lancerAnalyse() {
-		System.out.println("Bouton Appuyé");
+		try{
+			String source = fenetre.getSource();
+			String sortie = fenetre.getSortie();
+			String reste = fenetre.getReste();
+			String critere = fenetre.getCritere();
+			int debut = ((int) fenetre.getStart());
+			int fin = ((int) fenetre.getStop());
+			boolean exclure = fenetre.getExclure();
+			boolean garderReste = fenetre.getSaveReste();
+			
+		}
+		
+		
+		System.out.println("Bouton AppuyÃ©");
 		System.out.println(this.fenetre.getSource());
 	}
 	
